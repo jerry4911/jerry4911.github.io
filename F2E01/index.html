@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./translate.css">
+    <title>F2E-Week01</title>
+</head>
+<body>
+    <div id="app">
+        <div @click="show(0)"class="left-side">
+          <div class="context">
+            <div class="logo-text">Pomodoro</div>
+              <span title="現在的日期時間" class="time-text">{{timeText}}</span>
+            </div>  
+          
+          <div class="clock-circle">
+              <div class="clock-right">
+                <div class="one line"></div>
+                <div class="two line"></div>
+                <div class="three line"></div>
+                <div class="four line"></div>
+                <div class="five line"></div>
+                <div class="clock-center"></div>
+              </div>     
+              <div class="clock-mask" v-bind:style="ani"></div>     
+              <div class="clock-left">
+                <div title="現階段剩餘時間" class="clock-text">{{time}}</div>
+              </div>
+            </div>
+          
+          <div class="btn-context">
+              <button title="前進至下一階段"@click="next" class="next-time">
+                <ion-icon name="fastforward"></ion-icon>
+              </button>
+              <button @click="go" class="move-time" v-bind:style="{backgroundColor: bgColor}">
+                <div class="btn-text" v-bind:style="textColor">{{btnText}}</div>
+              </button>
+              <button title="重置時間"@click="reset" class="reset-time">
+                <ion-icon name="refresh"></ion-icon>
+              </button>
+            </div>
+          
+          <ul class="check-list">
+              <li>
+                <span class="list-circle-full"></span>
+              </li>
+              <li>
+                <span class="list-circle-full"></span>
+              </li>
+              <li>
+                <span class="list-circle-full"></span>
+              </li>
+              <li>
+                <span class="list-circle-empty"></span>
+              </li>
+              <li>
+                <span class="list-circle-empty"></span>
+              </li>
+            </ul>
+          
+          <div class="list-block">
+              <div class="list-title">
+                <ul>
+                  <li class="title-text">First task today</li>
+                  <li @click="demo" class="title-icon">
+                    <ion-icon name="arrow-dropdown-circle"></ion-icon>      
+                  </li> 
+                </ul>        
+              </div>
+              <div class="list-demo">
+                <ul class="list-all">
+                  <li><span class="list-text">1. Lorem ipsum dolor sit amet.</span></li>
+                  <li><span class="list-text">2. Consectetur adipiscing elit.</span></li>
+                  <li><span class="list-text">3. Nulla vulputate neque.</span></li>
+                  <li><span class="list-text">4. Consequat lorem pharetra</span></li>
+                  <li><span class="list-text">5. Ultrices non vitae elit.</span></li>
+                </ul>
+              </div>
+            </div>
+       </div>
+        
+      <!--右邊區塊-->
+      <div class="task-block">
+        <input class="add" type="text" placeholder="Add a new task…">
+        <div class="today-task">
+          <div class="task-title">Today</div>
+          <div class="today-line"></div>
+          <div class="task-name"><ion-icon name="arrow-dropright-circle"></ion-icon>First task today</div>
+          <div class="task-name"><ion-icon name="arrow-dropright-circle"></ion-icon>Second task today</div>
+          <div class="task-name"><ion-icon name="arrow-dropright-circle"></ion-icon>Third task today</div>
+        </div>
+        <div class="upcoming-task">
+          <div class="task-title">Upcoming</div>
+          <div class="upcoming-line"></div>
+          <div class="task-name"><ion-icon name="arrow-dropright-circle"></ion-icon>Task 1</div>
+          <div class="task-name"><ion-icon name="arrow-dropright-circle"></ion-icon>Task 2</div>
+          <div class="task-name"><ion-icon name="arrow-dropright-circle"></ion-icon>Task 3</div>
+        </div>
+      </div>
+      <div class="graph-block">
+        <div class="graph-title">Analysis</div>
+        <div class="line-graph">
+          <ul class="x-cor">
+            <li><span>5</span><div class="h-line"></div></li>
+            <li><span>4</span><div class="h-line"></div></li>
+            <li><span>3</span><div class="h-line"></div></li>
+            <li><span>2</span><div class="h-line"></div></li>
+            <li><span>1</span><div class="h-line"></div></li>
+          </ul>
+          <ul class="y-cor">
+            <li><div class="v-line"></div><span>Sun.</span><div class="date">30</div></li>
+            <li><div class="v-line"></div><span>Mon.</span><div class="date">1</div></li>
+            <li><div class="v-line"></div><span>Tue.</span><div class="date">2</div></li>
+            <li><div class="v-line"></div><span>Wed.</span><div class="date">3</div></li>
+            <li><div class="v-line"></div><span>Thr.</span><div class="date">4</div></li>
+            <li><div class="v-line"></div><span>Fri.</span><div class="date">5</div></li>
+            <li><div class="v-line"></div><span>Sat.</span><div class="date">6</div></li>
+          </ul>
+          <!-- <div class="graph"></div> -->
+          <ul class="page">
+            <li><ion-icon name="arrow-dropleft"></ion-icon></li>
+            <li><div class="page-title">Weekly</div></li>
+            <li><ion-icon name="arrow-dropright"></ion-icon></li>
+          </ul>
+        </div>
+        <div class="percent-graph">
+          <div class="today-graph">
+            <div class="today-title">
+              <ion-icon name="timer"></ion-icon>Today
+            </div> 
+            <div class="percent">
+              30%<ion-icon class="up"name="arrow-round-up"></ion-icon>
+            </div>
+          </div>
+          <div class="project-graph">
+            <div class="today-title">
+              <ion-icon name="time"></ion-icon>Project
+            </div> 
+            <div class="percent">
+              15%<ion-icon class="down"name="arrow-round-down"></ion-icon>
+            </div>         
+          </div> 
+        </div> 
+        <div class="task-graph">
+          <div class="task-list">
+            First task today
+            <ul class="circle-list">
+              <li class="task-circle-full"></li>
+              <li class="task-circle-full"></li>
+              <li class="task-circle-full"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+            </ul>
+          </div>
+          <div class="task-list">
+            Second task today
+            <ul class="circle-list">
+              <li class="task-circle-full"></li>
+              <li class="task-circle-full"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+            </ul>
+          </div>
+          <div class="task-list">
+            Third task today
+            <ul class="circle-list">
+              <li class="task-circle-full"></li>
+              <li class="task-circle-full"></li>
+              <li class="task-circle-full"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+            </ul>
+          </div>
+          <div class="task-list">
+            Forth task today
+            <ul class="circle-list">
+              <li class="task-circle-full"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+            </ul>
+          </div>
+          <div class="task-list">
+            Fifth task today
+            <ul class="circle-list">
+              <li class="task-circle-full"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+              <li class="task-circle-empty"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="music-block">
+        <div class="music-title">Sound</div>
+        <div class="noise-block">
+          <div class="noise-title">White Noise</div>
+          <div class="noise-list">
+            <div @click="check(1)"class="music-name">None
+              <ion-icon id="check1"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(2)"class="music-name">Air Conditioner Hum
+              <ion-icon id="check2"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(3)"class="music-name">Autumn Winds
+              <ion-icon id="check3"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(4)"class="music-name">Healing Storm
+              <ion-icon id="check4"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(5)"class="music-name">Rain on the River
+              <ion-icon id="check5"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(6)"class="music-name">Sleepy Beach Waves
+              <ion-icon id="check6"name="checkmark"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="alarm-block">
+          <div class="alarm-title">Alarm</div>
+          <div class="alarm-list">
+            <div @click="check(7)"class="music-name">None
+              <ion-icon id="check7"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(8)"class="music-name">Bell Sound Effect Ding
+              <ion-icon id="check8"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(9)"class="music-name">Cuckoo Bird Sound
+              <ion-icon id="check9"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(10)"class="music-name">Ding Ding Ding
+              <ion-icon id="check10"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(11)"class="music-name">Ding SFX
+              <ion-icon id="check11"name="checkmark"></ion-icon>
+            </div>
+            <div @click="check(12)"class="music-name">Noah Bells Melody
+              <ion-icon id="check12"name="checkmark"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--右邊導覽列-->
+    <div class="right-side">
+      <ul class="nav-bar">
+        <li id="list"@click="show(1)"class="nav-icon">
+          <ion-icon name="list-box"></ion-icon>
+        </li>
+        <li id="line"@click="show(2)"class="nav-icon">
+          <ion-icon name="analytics"></ion-icon>
+        </li>
+        <li id="music"@click="show(3)"class="nav-icon">
+          <ion-icon name="musical-notes"></ion-icon>
+        </li>
+      </ul>       
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="./app.js"></script>
+</html>

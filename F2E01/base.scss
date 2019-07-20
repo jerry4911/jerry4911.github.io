@@ -1,0 +1,257 @@
+$light-mi:#F7F5F1;
+$dark-blue:#003CA1;
+@mixin circle($size){
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+}
+$left-size:200px;
+$right-size:150px;
+$mask-size:170px;
+$center-size:120px;
+
+* {
+  border-style: border-box;
+}
+html {
+  max-width:1920px;
+  max-height:1080px;
+}
+body {
+  position: relative;
+  max-height:1080px;
+  max-width:1920px;
+  min-width: 1496px;
+  background-color:$dark-blue;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+.left-side {
+  min-height:930px;
+  min-width:1396px;
+  margin-right: 100px;
+  background-color:$light-mi;
+}
+.right-side {
+  position:absolute;
+  top: 30px;
+  right: 27px;
+}
+.context { 
+  padding: 48px 74px;
+  //flex-direction: column;
+  //justify-content: space-between;
+}
+.logo-text {
+  position: absolute;
+  color: $dark-blue;
+  font-weight: 900;
+  font-size: 35px;
+}
+.time-text { 
+  position: relative;
+  left:35%;
+  color: $dark-blue;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.btn-context {
+  position: absolute;
+  left:8%;
+  top:81%;
+}
+
+ion-icon {
+  cursor: pointer; 
+  border: 0;
+  font-size: 40px;
+}
+.next-time {
+  border: 0;
+  width: 40px;
+  background-color: $light-mi;
+  color: $dark-blue;
+}
+.reset-time {
+  border: 0;
+  width: 40px;
+  background-color: $light-mi;
+  color: $dark-blue;
+}
+.move-time {
+  margin-left: 40.5px;
+  margin-right: 22.5px;
+  width: 260px;
+  height: 63px;
+  border: 3px solid $dark-blue;
+  border-radius: 10px;
+  background-color: $light-mi;
+  .btn-text {
+    cursor: pointer; 
+    //color: $dark-blue;
+    font-weight: 900;
+    font-size: 35px;
+  }
+}
+
+.check-list {
+  position: absolute;
+  left:45%;
+  top:22%;
+  list-style-type: none;  
+}
+.list-circle-full {
+  margin-bottom: 45px;
+  border: 3px solid $dark-blue;
+  @include circle(40px);
+  background-color: $dark-blue;
+  display: block;
+}
+.list-circle-empty {
+  margin-bottom: 45px;
+  border: 3px solid $dark-blue;
+  @include circle(40px);  
+  background-color: white;
+  display: block;
+}
+.list-title ul li {
+  display: inline;
+}
+.list-title {
+  position: absolute;
+  left:65%;
+  top:41%;
+  padding-right: 15px;
+  text-align: right;
+}
+.title-text {
+  margin-right: 10px;
+  color: $dark-blue;
+  font-weight: 900;
+  font-size: 35px;
+}
+.title-icon {
+  position: absolute;
+  top:30%;
+  
+  color: $dark-blue;
+}
+.list-demo {
+  position: absolute;
+  top:51%;
+  left:64%;
+  background-color: white;
+  height: 33%;
+  width: 23%;
+}
+.list-all {
+  display: block;
+  padding: 4% 10%;
+}
+.list-all li {
+  list-style-type: none;
+}
+.list-text {
+  line-height: 50px;
+  color: $dark-blue;
+  font-size: 20px;
+}
+.list-block {
+ 
+}
+.clock-left {
+  box-shadow:0px 10px 12px -2px rgba(20%,20%,40%,0.5);
+  position: absolute;
+  top: 234px;
+  left: 150px; 
+  border: 3px solid $dark-blue;
+  background-color: $light-mi;
+  height: $left-size * 2;
+  width: $left-size; 
+  display: inline-block;
+  border-bottom-left-radius: $left-size *2;
+  border-top-left-radius: $left-size *2;
+}
+
+.clock-right {
+  box-shadow:0px 10px 12px -2px rgba(20%,20%,40%,0.5);
+  position: absolute;
+  top: 288px;
+  left: 353px;  
+  background-color: $dark-blue;
+  height: $right-size * 2;
+  width: $right-size; 
+  display: inline-block;
+  border-bottom-right-radius: $right-size *2;
+  border-top-right-radius: $right-size *2;
+}
+
+.clock-mask {
+    box-shadow:0px 10px 12px -2px rgba(20%,20%,40%,0.5);
+  opacity:0.8;
+  position: absolute;
+  top: 265px;
+  left: 353px;  
+  border: 3px solid $dark-blue;
+  background-color: $light-mi;
+  height: $mask-size * 2;
+  width: $mask-size; 
+  display: inline-block;
+  border-bottom-right-radius: $mask-size *2;
+  border-top-right-radius: $mask-size *2;/*
+  animation: 300s linear infinite rotateStop;*/
+  transform-origin: 0% 50%;
+}
+.line {
+  width:4px;
+  height:270px;
+  background-color: white;
+  position:absolute;
+  margin-top:18px;
+}
+.one{
+  transform: rotateZ(30deg);
+}
+.two{
+  transform: rotateZ(60deg);
+}
+.three{
+  transform: rotateZ(90deg);
+}
+.four{
+  transform: rotateZ(120deg);
+}
+.five{
+  transform: rotateZ(150deg);
+}
+.clock-center {
+  position: absolute;
+  top: 33px;
+  left: 0px;  
+  background-color: $dark-blue;
+  height: $center-size * 2;
+  width: $center-size; 
+  display: inline-block;
+  border-bottom-right-radius: $center-size *2;
+  border-top-right-radius: $center-size *2;
+}
+.clock-text {
+  position: absolute;
+  top: 165px;
+  left: 30px;  
+  color: $dark-blue;
+  font-weight: 400;
+  font-size: 60px;
+}
+/*
+.nav-bar {
+  padding-left: 30%;
+}*/
+.nav-icon {
+  //display:block;
+  list-style-type: none;
+  color: $light-mi;
+  margin-top: 100%;
+}
