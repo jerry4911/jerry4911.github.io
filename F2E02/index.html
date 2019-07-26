@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./base.css">
+    <title>F2E-Week02</title>
+</head>
+<body>
+<div id="app">
+    <div class="main-containter">
+        <div class="temp-place">
+            <div class="temp-card"id="temp1"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="temp-card"id="temp2"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="temp-card"id="temp3"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="temp-card"id="temp4"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="timer">
+                <div class="timer-title"onmousedown='return false;' onselectstart='return false;'>TIME</div>
+                <div class="count"onmousedown='return false;' onselectstart='return false;'>{{timer}}</div>
+            </div><!--
+        --><div class="end-group"id="end1"ondrop="DropEnd(event,1)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="end-group"id="end2"ondrop="DropEnd(event,2)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="end-group"id="end3"ondrop="DropEnd(event,3)" ondragover="AllowDrop(event)"></div><!--
+        --><div class="end-group"id="end4"ondrop="DropEnd(event,4)" ondragover="AllowDrop(event)"></div>
+        </div>
+        <div class="card-place">
+            <div class="card"id="card1">
+                <div class="real-card" id="card10"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card11"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card12"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card13"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card14"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card15"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card16"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+            </div><!--
+        --><div class="card"id="card2">
+                <div class="real-card" id="card20"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card21"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card22"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card23"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card24"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card25"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card26"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div><!--
+        --><div class="card"id="card3">
+                <div class="real-card" id="card30"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card31"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card32"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card33"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card34"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card35"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card36"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div><!--
+        --><div class="card"id="card4">
+                <div class="real-card" id="card40"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card41"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card42"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card43"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card44"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card45"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card46"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div><!--
+        --><div class="card"id="card5">
+                <div class="real-card" id="card50"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card51"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card52"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card53"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card54"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card55"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div><!--
+        --><div class="card"id="card6">
+                <div class="real-card" id="card60"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card61"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card62"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card63"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card64"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card65"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div><!--
+        --><div class="card"id="card7">
+                <div class="real-card" id="card70"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card71"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card72"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card73"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card74"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card75"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div><!--
+        --><div class="card"id="card8">
+                <div class="real-card" id="card80"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card81"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card82"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card83"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card84"draggable="false"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+                <div class="real-card" id="card85"draggable="true"ondragstart="Drag(event)"ondrop="Drop(event)"ondragover="AllowDrop(event)"></div>
+        </div>
+        <div class="btn-list">
+            <div class="btn return" title="返回上一步"@click="returnStep">
+                <img src="./img/icon_undo.png">
+            </div>
+            <div class="btn hint" title="提示"@click="">
+                <img src="./img/icon_hint.png">
+            </div>
+            <div class="btn reset" title="刷新牌局"@click="alertPage">
+                <img src="./img/icon_restart.png">
+            </div>
+        </div>
+        </div> 
+        <div class="logo-icon">
+            <img src="./img/icon_logo.png">   
+        </div>
+    </div>
+    <div class="alert-window">
+        <div class="alert-card">
+            <div class="reset-title">START A NEW GAME?</div>
+            <div class="reset-option">
+                <div class="no" @click="stayPage(1)">NO</div>
+                <div class="yes" @click="resetPage">YES</div>
+            </div>  
+        </div>       
+    </div>
+    <div class="congr-window">
+        <div class="congr-card">
+            <div class="congr-title">CONGRATULATIONS!</div>
+            <div class="record">
+                <i class="material-icons">
+                    timer
+                </i>
+                your record:    {{minute}}  min {{second-1}} s
+            </div>
+            <div class="next" @click="restartPage">
+                <i class="material-icons">
+                    arrow_right_alt
+                </i>
+            </div>  
+        </div>  
+        <div class="restart-card">
+            <div class="restart-title">PLAY AGAIN?</div>
+            <div class="reset-option">
+                <div class="no" @click="stayPage(2)">NO</div>
+                <div class="yes" @click="resetPage">YES</div>
+            </div>  
+        </div>      
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="./app.js"></script>
+</html>
