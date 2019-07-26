@@ -264,7 +264,7 @@ var app=new Vue({
         },
         returnStep(){
             console.log("return")
-            history.back();
+            //history.back();
             //location.reload();
         },
         alertPage(){
