@@ -1,0 +1,351 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width:100%;
+    min-width: 1280px;
+    min-height: 1100px;
+    background-color:#F5F5F5;
+}
+* {
+    font-family: 'Raleway', sans-serif;
+}
+.left-side {
+    padding: 0;
+    margin: 0;
+}
+.right-side {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top:40px;
+    left:665px;
+}
+.white-box {
+    padding: 0;
+    margin: 0;
+    background-color:white;
+    width: 530px;
+    height: 524px;
+}
+.album-box {
+    position: absolute;
+    top:40px;
+    left: 85px;
+    width: 540px;
+    height: 540px; 
+    object-fit: cover;
+}
+.album-box img{
+    width: 540px;
+    height: 540px; 
+    object-fit: cover;
+}
+.album-name-1 {
+    width: 415px;
+    height: 55px;
+    display: block;
+    position: relative;
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 0;
+    padding-top: 72px;
+    margin-left: 85px;
+    border-bottom: 2px solid #000;
+}
+.album-name-2 {
+    width: 355px;
+    height: 55px;
+    display: block;
+    position: relative;
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 0;
+    padding-top: 2px;
+    margin-left: 85px;
+    border-bottom: 2px solid #000;
+}
+.info-block {
+    margin-left: 85px;
+    padding-top: 16px;
+}
+.info-time {
+    font-size: 16px;
+    font-weight: 600;
+}
+.info-singer {
+    font-size: 16px;
+    font-weight: 800;
+}
+.btn-text {
+    padding-top: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.play-btn {
+    position: relative;
+    left: 400px;
+    bottom: 35px;
+    cursor: pointer;
+    display: inline-block;
+    width: 118px;
+    height: 34px;
+    background-color: #FF6C00;
+    border-radius: 22px;
+    color: white;
+    margin-left: 16px;
+}
+.song-list {
+    margin: 0;
+    padding: 0;
+    font-weight:600;
+    counter-reset: number;
+    list-style-type: none;
+}
+/* The "\a0" is a space */
+.song-list li::before {
+    position: relative;
+    bottom:10px;
+    font-size:16px;
+    counter-increment: number;
+    content: counter(number)"\a0";
+}
+.song-list img{
+    display: inline-block;
+    margin-right: 30px;
+    width: 32px;
+    height: 32px; 
+    object-fit: cover;
+}
+.song-list li {
+    margin-bottom: 12px;
+    display: block;
+    width: 563px;
+    height: 25px;
+    border-bottom: 1px solid rgb(0,0,0,0.2);
+}
+.song-name {
+    position: relative;
+    bottom:10px;
+    display: inline-block;
+    width: 320px;
+    height: 18px;
+    margin-left: 86px;
+}
+.song-name-2 {
+    position: relative;
+    bottom:10px;
+    display: inline-block;
+    width: 320px;
+    height: 18px;
+    margin-left: 78px;
+}
+.song-time {
+    position: relative;
+    bottom:13px;
+    display: inline-block;
+    width: 31px;
+    height: 18px;
+    margin-right: 71px;
+}
+.song-list i{
+    position: relative;
+    bottom:3px;
+}
+i{
+    display: inline-block;
+    cursor: pointer;
+}
+.song-block {
+    margin-bottom: 35px;
+}
+.before{
+    margin-left: 300px;
+    margin-right: 17px;
+}
+.title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+.player img{
+    margin: 0;
+    width: 96px;
+    height: 96px; 
+    object-fit: cover;  
+}
+.player {
+    position: fixed;
+    right:0;
+    bottom:0;
+    width: 720px;
+    height: 96px;
+    background-color: rgb(0,0,0,0.85)
+}
+.player-name{
+    position:relative;
+    bottom:78px;
+    left: 112px;
+    color:white;
+}
+.player-song-name{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom: 4px;
+}
+.player-singer-name{
+    font-size:14px;
+    font-weight:400;
+}
+.btn-list{
+    position:relative;
+    bottom:120px;
+    left: 300px;
+    color:white;
+}
+.play-song{
+    display: inline-block;
+    height: 48px;
+    width: 88px;
+}
+.before-song, .next-song{
+    position: relative;
+    bottom:10px;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+.play-song i{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 48px;
+    font-size:48px;
+}
+.louder {
+    margin-left: 60px;
+    display: inline-block;
+    position: relative;
+    bottom:10px;
+    width: 28px;
+}
+.louder i{
+    width: 24px;
+}
+.expand {
+    margin-left: 125px;
+    display: inline-block;
+    position: relative;
+    bottom:10px;
+    width: 28px;
+}
+.expand i{
+    width: 24px;
+}
+.singer img{
+    margin: 0;
+    width: 160px;
+    height: 160px; 
+    border-radius: 50%;
+    object-fit: cover;  
+    object-position: 50%  0; 
+}
+.second-singer img{
+    object-position: 50%  10%; 
+}
+.singer li{
+    display: inline-block;
+}
+.singer{
+    margin: 0;
+    padding: 0;
+}
+.singer-title{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    margin-top: 7px;
+}
+.first-singer, .second-singer{
+    margin-right: 30px;
+}
+.progress-bar{
+    position: relative;
+    left: 96px;
+    bottom: 111px;
+    width: 624px;
+    height: 4px;
+    background-color: rgba(255,255,255,0.2)
+}
+.current-progress{
+    position: relative;
+    left: 96px;
+    bottom: 115px;
+    width: 324px;
+    height: 4px;
+    background-color: #FF6C00;
+}
+.volume-bar{
+    position: relative;
+    left: 40px;
+    bottom: 16px;
+    width: 91px;
+    height: 2px;
+    background-color: rgba(255,255,255,0.2);
+}
+.current-volume{
+    position: relative;
+    left: 40px;
+    bottom: 18px;
+    width: 40px;
+    height: 2px;
+    background-color: white;
+}
+.control-volume{
+    cursor: pointer;
+    position: relative;
+    left: 80px;
+    bottom: 23px;
+    margin: 0;
+    width: 8px;
+    height: 8px; 
+    border-radius: 50%;
+    background-color: white;
+}
+.album-block i{
+    position: relative;
+    top:5px;
+    display: inline-block;
+}
+.album img{
+    margin: 0;
+    width: 160px;
+    height: 160px; 
+    object-fit: cover;   
+}
+.album{
+    margin: 0;
+    padding: 0;   
+}
+.album li{
+    display: inline-block;
+    list-style: none;
+}
+.first-album, .second-album{
+    margin-right: 35px;
+}
+.album-title{
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+.album-singer{
+    font-size: 14px;
+    font-weight: 500;
+}
+.album-name{
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+.album-block{
+    margin-bottom: 8px;
+}
