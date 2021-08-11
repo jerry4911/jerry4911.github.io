@@ -885,7 +885,7 @@ section {
 
 .testimonials .testimonial-item p {
   /* font-style: italic; */
-  padding-top: 20px;
+  padding-top: 10px;
   margin: 0 auto 15px auto;
   color: #eee;
 }
@@ -922,12 +922,12 @@ section {
     height: 700px;
   }
   .testimonials .testimonial-item{
-    height: 520px;
+    height: 540px;
     overflow: overlay;
   }
   .testimonials .testimonial-item .testimonial-img {
-    width: 520px;
-    height: 390px;
+    width: 550px;
+    height: 413px;
   }
   .testimonials .testimonial-item .photo-caption {
     width: 520px;
@@ -980,12 +980,12 @@ section {
   font-size: 18px;
   position: absolute;
   left: -25px;
-  top: 6px;
 }
 
 .faq .faq-list p {
   margin-bottom: 20px;
   font-size: 15px;
+  margin-top: 10px;
 }
 
 .faq .faq-list a.collapse {
