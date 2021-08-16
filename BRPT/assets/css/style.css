@@ -569,6 +569,20 @@ section {
   font-weight: 600;
 }
 
+.bg-secondary {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.tab-content span, h5{
+  margin-right: 10px;
+}
+
+.tab-content span {
+  position: relative;
+  top: 0;
+}
+
 @media (min-width: 1024px) {
   .section-title p {
     width: 50%;
@@ -732,6 +746,18 @@ section {
   position: relative;
 }
 
+.about .tab-content {
+  margin: auto;
+}
+
+.about .tab-content #tab-title, h5{
+  text-align: center;
+}
+
+.about .tab-content li{
+  padding: 0;
+}
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -760,7 +786,7 @@ section {
 
 .services .icon-box .icon i {
   color: #3b8af2;
-  font-size: 28px;
+  font-size: 50px;
   transition: ease-in-out 0.3s;
 }
 
@@ -770,7 +796,14 @@ section {
   font-size: 24px;
 }
 
-.services .icon-box h4 a {
+.services .icon-box h5{
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 20px;
+  padding-bottom: 4px;
+}
+
+.services .icon-box h4 a, h5 a {
   color: #222222;
   transition: ease-in-out 0.3s;
 }
@@ -964,7 +997,7 @@ section {
   list-style: none;
 }
 
-.faq .faq-list li {
+#faq .faq-list li {
   padding: 0 0 20px 25px;
 }
 
@@ -1003,6 +1036,8 @@ section {
 .faq .faq-list a.collapsed i::before {
   content: "\eab2" !important;
 }
+
+
 
 /*--------------------------------------------------------------
 # Contact
