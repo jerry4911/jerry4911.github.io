@@ -767,6 +767,10 @@ section {
   padding-top: 12px;
 }
 
+.about .tab-content .tab-pane p b,.hyperlink {
+  color:#0084ff;
+}
+
 .about .tag {
   text-align: center;
   padding-bottom: 30px;
