@@ -49,7 +49,7 @@
         <ul>
           <li class="active"><a href="index.html">首頁</a></li>
           <li><a href="#about">公告區</a></li>
-          <li><a href="#services">手冊下載</a></li>
+          <li><a href="#services">文件下載</a></li>
           <li><a href="#testimonials">活動回顧</a></li>
           <li><a href="#contact">聯絡我們</a></li>
 
@@ -125,47 +125,82 @@
         <div class="section-title">
           <h3><span>公告區</span></h3>
         </div>
-        <div class="tab-content col-lg-12">
-          <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-            <li>
-              <a id="tab-title" data-toggle="collapse" href="#tab-faq-version" class="collapsed">【活動公告】 
-                <!-- <i class="icofont-simple-up"></i> -->
-              </a>
-              <br>
-              <div id="tab-faq-version" class="collapse" data-parent=".faq-list">
-                <div class="tab-content col-lg-6 col-md-8 col-12">
-                  <h5>9月的 BookRoll Meetups(聚會)</h5>
-                  <hr>
-                  <p style="text-indent:2em;">為了能夠持續優化系統，提升教學與研究的成效，我們將於近期舉辦三場 BookRoll Meetups(聚會) ；
-                    會中將討論BookRoll的開課狀況，分享教師經驗及學生回饋，並針對以下三項議題深入討論：</p>
-                  <p>1. 如何設計學習活動(learning activity)並有效收集學生閱讀足跡(reading footprint)</p>
-                  <p>2. 如何擬訂研究問題(research question)與實驗設計(experiment design)</p>
-                  <p>3. 討論明年8/7-9，與京都大學合辦 International Conference on Learning Activity In Asia</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- <div class="row justify-content-center" id="section-content">
-          <div class="nav flex-column nav-pills col-lg-2 col-md-4 col-6" id="v-pills-tab" role="tablist"
-            aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-              aria-controls="v-pills-profile" aria-selected="false">Meetups</a>
-          </div>
-          <div class="tab-content col-lg-6" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel"
-              aria-labelledby="v-pills-profile-tab">
-              <h5>【活動公告】9月的 BookRoll Meetups(聚會)</h5>
-              <hr>
-              <p style="text-indent:2em;">為了能夠持續優化系統，提升教學與研究的成效，我們將於近期舉辦三場 BookRoll Meetups(聚會) ；
-                會中將討論BookRoll的開課狀況，分享教師經驗及學生回饋，並針對以下三項議題深入討論：</p>
-              <p>1. 如何設計學習活動(learning activity)並有效收集學生閱讀足跡(reading footprint)</p>
-              <p>2. 如何擬訂研究問題(research question)與實驗設計(experiment design)</p>
-              <p>3. 討論明年8/7-9，與京都大學合辦 International Conference on Learning Activity In Asia</p>
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-2 col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a onclick="showPost(this)" class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">所有公告</a>
+              <a onclick="showPost(this)" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">活動公告</a>
+              <a onclick="showPost(this)" class="nav-link" id="v-pills-system-tab" data-toggle="pill" href="#v-pills-system" role="tab" aria-controls="v-pills-system" aria-selected="false">系統公告</a>
             </div>
           </div>
-        </div> -->
+          <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <!-- 公告欄 -->
+              <div class="tab-pane fade show active post" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="row">
+                  <div class="tag col-lg-2 col-sm-12">活動公告</div>
+                  <a onclick="showPost(this)" class="nav-link col-lg-6 col-sm-12" id="post-profile-tab" data-toggle="pill" href="#post-profile" role="tab" aria-controls="post-profile" aria-selected="false">BRPT Workshop</a>
+                  <div class="time col-lg-4 col-sm-12">2021-09-02</div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="tag col-lg-2 col-sm-12">系統公告</div>
+                  <a onclick="showPost(this)" class="nav-link col-lg-6 col-sm-12" id="post-system-tab" data-toggle="pill" href="#post-system" role="tab" aria-controls="post-system" aria-selected="false">中大Dashboard及診斷(Diagnosis)工具開放</a>  
+                  <div class="time col-lg-4 col-sm-12">2021-09-02</div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade post" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="row">
+                  <a onclick="showPost(this)" class="nav-link col-8" id="post-profile-tab" data-toggle="pill" href="#post-profile" role="tab" aria-controls="post-profile" aria-selected="false">BRPT Workshop</a>  
+                  <div class="time col-4">2021-09-02</div>
+                </div>
+              </div>
+              <div class="tab-pane fade post" id="v-pills-system" role="tabpanel" aria-labelledby="v-pills-system-tab">
+                <div class="row">
+                  <a onclick="showPost(this)" class="nav-link col-8" id="post-system-tab" data-toggle="pill" href="#post-system" role="tab" aria-controls="post-system" aria-selected="false">中大Dashboard及診斷(Diagnosis)工具開放</a>  
+                  <div class="time col-4">2021-09-02</div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade post" id="post-profile" role="tabpanel" aria-labelledby="post-profile-tab">
+                <h3>BRPT Workshop</h3><div class="time post-title">2021-09-02 09:18:52</div><hr>
+                <p>
+                  配合BookRoll中大Dashboard及診斷(Diagnosis)工具的開放，</br>
+                  我們將於近期舉辦一場<b style="color:#0084ff">BRPT Workshop</b>；</br>
+                  會中將介紹工具的功能與開放時程，並針對以下三項主題深入說明：</br>
+                  <ol>
+                    <li>BookRoll 中大Dashboard及診斷工具介紹
+                    <li>精準教育思維下的 BookRoll 工具應用與發展
+                    <li>BookRoll 環境下-透過AI之學習能力分析
+                  </ol>
+                  謹附相關資訊供參，歡迎蒞臨指教</br>
+                  <ul>
+                    <li>時間：110年9月10日(五) 14:00-16:00
+                    <li>地點：<a class="hyperlink" href="https://meet.google.com/cyq-jpcs-sam" target="_blank">https://meet.google.com/cyq-jpcs-sam (線上)</a>
+                  </ul>
+                </p>
+              </div>
+
+              <div class="tab-pane fade post" id="post-system" role="tabpanel" aria-labelledby="post-system-tab">
+                <h3>中大Dashboard及診斷(Diagnosis)工具開放</h3><div class="time post-title">2021-09-02 09:18:52</div><hr>
+                <p>
+                  為了能夠深入探討BookRoll的使用情形，提升教學與研究的成效。我們將於近期開通<b style="color:#0084ff">中大Dashboard</b>及其他<b style="color:#0084ff">診斷工具</b>，歡迎各位老師使用。</br>
+                  功能說明與使用手冊請參見文件下載。</br></br>
+                  謹附開放工具清單供參</br>
+                  <ul>
+                    <li>中大Dashboard
+                    <li>診斷工具
+                      <ul><li>Weekly Report
+                      <li>Attention and refocus
+                      <li>Marker and memo quality   
+                  </ul>
+                </p>
+              </div>
+
+            </div>
+        </div>
       </div>
     </section><!-- End About Section -->
 
@@ -175,7 +210,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h3><span>手冊下載</span></h3><br>
+          <h3><span>文件下載</span></h3><br>
         </div>
 
         <!-- For教師 -->
@@ -183,42 +218,44 @@
           <h4>For教師 使用手冊</h4>
         </div>
         <div class="row  justify-content-center section-title">
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5"
-            data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5" data-aos="zoom-in"
+            data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxs-book-open"></i></div>
               <h4><a target="_blank" href="downloads/教師 BR使用手冊_20191001.pdf">BookRoll</a></h4>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5"
-            data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5" data-aos="zoom-in"
+            data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a target="_blank" href="downloads/教師 Dashboard使用手冊_20191001.pdf">Dashboard</a></h4>
+              <h4><a target="_blank" href="downloads/教師 Dashboard使用手冊_20191001.pdf">京大Dashboard</a></h4>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5"
-            data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5" data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxs-book-content"></i></div>
+              <h4><a target="_blank" href="downloads/教師 Book overview 使用手冊.pdf">中大Dashboard</a></h4>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5" data-aos="zoom-in"
+            data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-book-reader"></i></div>
               <h4><a target="_blank" href="downloads/教師 Moodle使用手冊_20191001.pdf">Moodle</a></h4>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5"
-            data-aos="zoom-in" data-aos-delay="400">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxs-bar-chart-alt-2"></i></div>
-              <h4><a target="_blank" href="downloads/教師_Diagnosis (Weekly report) 使用手冊_20200804.pdf">Weekly Report</a></h4>
-            </div>
-          </div>
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5 mb-lg-0"
             data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxs-book-content"></i></div>
-              <h4><a target="_blank" href="downloads/教師 Book overview 使用手冊.pdf">Book Overview</a></h4>
+              <div class="icon"><i class="bx bxs-bar-chart-alt-2"></i></div>
+              <h4><a target="_blank" href="downloads/教師_Diagnosis (Weekly report) 使用手冊_20200804.pdf">Weekly Report</a>
+              </h4>
             </div>
           </div>
 
@@ -226,7 +263,8 @@
             data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bxs-pencil"></i></div>
-              <h5><a target="_blank" href="downloads/教師_Diagnosis (Marker and memo quality) 使用手冊_20200804.pdf">Marker & Memo Quality</a></h5>
+              <h5><a target="_blank" href="downloads/教師_Diagnosis (Marker and memo quality) 使用手冊_20200804.pdf">Marker &
+                  Memo Quality</a></h5>
             </div>
           </div>
 
@@ -234,7 +272,8 @@
             data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bxs-bell"></i></div>
-              <h5><a target="_blank" href="downloads/教師_Diagnosis (Attention and refocus) 使用手冊_20200804.pdf">Attention & Refocus</a></h5>
+              <h5><a target="_blank" href="downloads/教師_Diagnosis (Attention and refocus) 使用手冊_20200804.pdf">Attention &
+                  Refocus</a></h5>
             </div>
           </div>
         </div>
@@ -252,13 +291,13 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5 mb-lg-0"
+          <!--  <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center mb-5 mb-lg-0"
             data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a target="_blank" href="downloads/學生 Dashboard使用手冊_20191001.pdf">Dashboard</a></h4>
             </div>
-          </div>
+          </div>  -->
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch  justify-content-center mb-5 mb-lg-0"
             data-aos="zoom-in" data-aos-delay="300">
@@ -386,7 +425,7 @@
         <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
 
           <li>
-            <a data-toggle="collapse" href="#faq1" class="collapsed">BRPT 的 Book overview 提供了什麼功能 ? 
+            <a data-toggle="collapse" href="#faq1" class="collapsed">BRPT 的 Book overview 提供了什麼功能 ?
               <i class="icofont-simple-up"></i></a>
             <div id="faq1" class="collapse" data-parent=".faq-list">
               <p>
@@ -397,7 +436,7 @@
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq2" class="collapsed">學生用 BookRoll 可以做什麼 ? 
+            <a data-toggle="collapse" href="#faq2" class="collapsed">學生用 BookRoll 可以做什麼 ?
               <i class="icofont-simple-up"></i></a>
             <div id="faq2" class="collapse" data-parent=".faq-list">
               <p>
@@ -408,7 +447,7 @@
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq3" class="collapsed">如何開課 ? 
+            <a data-toggle="collapse" href="#faq3" class="collapsed">如何開課 ?
               <i class="icofont-simple-up"></i></a>
             <div id="faq3" class="collapse" data-parent=".faq-list">
               <p>
@@ -491,14 +530,14 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">首頁</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">公告區</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services">手冊下載</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">文件下載</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#testimonials">活動回顧</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">聯絡我們</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4  justify-content-center">
-            <iframe 
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.946656738909!2d121.18943712148801!3d24.96792947061327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1c9f93ab06af735!2z5Lit5aSu5aSn5a245bel5LqU6aSo!5e0!3m2!1szh-TW!2stw!4v1469630426784"
               frameborder="0" style="border: 5px;; width: 100%; height: 211px;" allowfullscreen></iframe>
           </div>

@@ -574,7 +574,7 @@ section {
   margin-bottom: 10px;
 }
 
-.tab-content span, h5{
+.tab-content span, h5 {
   margin-right: 10px;
 }
 
@@ -736,9 +736,9 @@ section {
   margin-bottom: 0;
 }
 
-#v-pills-tabContent{
+.about #v-pills-tabContent {
   background-color: #fff;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
 }
 
@@ -756,6 +756,37 @@ section {
 
 .about .tab-content li{
   padding: 0;
+}
+
+.about .tab-content .tab-pane .row .time {
+  padding-top: 10px;
+  margin: 0;
+}
+
+.about .tab-content .tab-pane .row a {
+  padding-top: 12px;
+}
+
+.about .tag {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 10px 10px;
+  margin: 0;
+  background: #e7f1fd;
+  color: #222222;
+  display: inline-block;
+  border-radius: 50px;
+}
+
+.about .time {
+  text-align: right;
+}
+
+.about .post-title {
+  text-align: left;
 }
 
 /*--------------------------------------------------------------
@@ -1007,6 +1038,12 @@ section {
   font-family: #106eea;
   font-size: 18px;
   font-weight: 500;
+}
+
+.faq .faq-list a.hyperlink {
+  display: inline;
+  font-size: 15px;
+  font-family: #106eea;
 }
 
 .faq .faq-list i {

@@ -219,59 +219,22 @@
     aos_init();
   });
 
-  $("#tab-content").hide()
-
-  var max_tab_content_height = $("#v-pills-profile").height();
-  $("#v-pills-tabContent").height(max_tab_content_height);
+  // 公告欄大小設為最長的公告高度
+  var post_list = $(".post");
+  var max_len = 0
+  for(var i=0; i<post_list.length; i++){
+    if( max_len < post_list[i].height() ){
+      max_len = post_list[i].height()
+    }
+  }
+  $("#v-pills-tabContent").height(max_len);
 
 })(jQuery);
 
-// 公告區測欄
-function showAnnouce(e){
-  $("#v-pills-home").show();
-  $("#tab-content").hide();
-  switch(e) {
-    case 'all':
-      $("#tab-title").html("所有公告");
-      // 如果是要切換可以用toggle();
-      $("#tab-rows tr").show();
-      break;
-    case 'activity':
-      $("#tab-title").html("活動公告");
-      $("#tab-rows tr").hide();
-      $(".meetups").show();
-      break;
-    case 'system':
-      $("#tab-title").html("系統公告");
-      $("#tab-rows tr").hide();
-      $(".dashboard").show();
-      break;
-    case 'brpt':
-      $("#tab-title").html("BRPT公告");
-      $("#tab-rows tr").hide();
-      $(".brpt").show();
-      break;
-  }
-}
-
-function showContent(e) {
-  $("#v-pills-home").hide();
-  $("#tab-content").show();
-  switch(e) {
-    case 'meetups':
-      $("#tab-content").html(
-        
-      )
-      break;
-    case 'dashboard':
-      $("#tab-content").html(
-        
-      )
-      break;
-    case 'brpt':
-      $("#tab-content").html(
-        
-      )
-      break;
-  }
+// 公告區側欄
+function showPost(element){
+  $(".post").removeClass("active show")
+  var id = $(element).attr("id")
+  id = id.replace("-tab", "");
+  $("#"+id).addClass("active show")
 }
