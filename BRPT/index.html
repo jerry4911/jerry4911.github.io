@@ -35,6 +35,13 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script>
+    // 清除快取
+    if(localStorage.getItem("initial")){
+      window.location.reload();
+      localStorage.removeItem('initial');
+    }
+  </script>
 </head>
 
 <body>
@@ -51,6 +58,7 @@
           <li><a href="#about">公告區</a></li>
           <li><a href="#services">文件下載</a></li>
           <li><a href="#testimonials">活動回顧</a></li>
+          <li><a href="#faq">常見問答</a></li>
           <li><a href="#contact">聯絡我們</a></li>
 
         </ul>
@@ -129,38 +137,38 @@
           <div class="col-lg-1"></div>
           <div class="col-lg-2 col-3">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a onclick="showPost(this)" class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="" role="tab" aria-controls="v-pills-home" aria-selected="true">所有公告</a>
-              <a onclick="showPost(this)" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="v-pills-profile" aria-selected="false">活動公告</a>
-              <a onclick="showPost(this)" class="nav-link" id="v-pills-system-tab" data-toggle="pill" href="" role="tab" aria-controls="v-pills-system" aria-selected="false">系統公告</a>
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="" role="tab" aria-controls="v-pills-home" aria-selected="true">所有公告</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="v-pills-profile" aria-selected="false">活動公告</a>
+              <a class="nav-link" id="v-pills-system-tab" data-toggle="pill" href="" role="tab" aria-controls="v-pills-system" aria-selected="false">系統公告</a>
             </div>
           </div>
-          <div class="col-9">
-            <div class="tab-content" id="v-pills-tabContent">
+          <div class="col-lg-8 col-9">
+            <div class="tab-content justify-content-between" id="v-pills-tabContent">
               <!-- 公告欄 -->
               <div class="tab-pane fade show active post" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="row">
-                  <div class="tag col-lg-2 col-sm-12">活動公告</div>
-                  <a onclick="showPost(this)" class="nav-link col-lg-6 col-sm-12" id="post-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="post-profile" aria-selected="false">BRPT Workshop</a>
-                  <div class="time col-lg-4 col-sm-12">2021-09-02</div>
+                  <div class="tag d-flex justify-content-start">活動公告</div>
+                  <a  class="nav-link d-flex justify-content-start flex-fill" flex-fill id="post-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="post-profile" aria-selected="false">BRPT Workshop</a>
+                  <div class="time d-flex justify-content-end flex-fill">2021-09-02</div>
                 </div>
                 <hr>
                 <div class="row">
-                  <div class="tag col-lg-2 col-sm-12">系統公告</div>
-                  <a onclick="showPost(this)" class="nav-link col-lg-6 col-sm-12" id="post-system-tab" data-toggle="pill" href="" role="tab" aria-controls="post-system" aria-selected="false">中大Dashboard及診斷(Diagnosis)工具開放</a>  
-                  <div class="time col-lg-4 col-sm-12">2021-09-02</div>
+                  <div class="tag d-flex justify-content-start">系統公告</div>
+                  <a class="nav-link d-flex justify-content-start flex-fill" id="post-system-tab" data-toggle="pill" href="" role="tab" aria-controls="post-system" aria-selected="false">中大Dashboard及診斷(Diagnosis)工具開放</a>  
+                  <div class="time d-flex justify-content-end flex-fill">2021-09-02</div>
                 </div>
               </div>
               
               <div class="tab-pane fade post" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                 <div class="row">
-                  <a onclick="showPost(this)" class="nav-link col-8" id="post-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="post-profile" aria-selected="false">BRPT Workshop</a>  
-                  <div class="time col-4">2021-09-02</div>
+                  <a class="nav-link d-flex justify-content-start flex-fill" id="post-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="post-profile" aria-selected="false">BRPT Workshop</a>  
+                  <div class="time d-flex justify-content-end flex-fill">2021-09-02</div>
                 </div>
               </div>
               <div class="tab-pane fade post" id="v-pills-system" role="tabpanel" aria-labelledby="v-pills-system-tab">
                 <div class="row">
-                  <a onclick="showPost(this)" class="nav-link col-8" id="post-system-tab" data-toggle="pill" href="" role="tab" aria-controls="post-system" aria-selected="false">中大Dashboard及診斷(Diagnosis)工具開放</a>  
-                  <div class="time col-4">2021-09-02</div>
+                  <a class="nav-link d-flex justify-content-start flex-fill" id="post-system-tab" data-toggle="pill" href="" role="tab" aria-controls="post-system" aria-selected="false">中大Dashboard及診斷(Diagnosis)工具開放</a>  
+                  <div class="time d-flex justify-content-end flex-fill">2021-09-02</div>
                 </div>
               </div>
 
@@ -351,7 +359,7 @@
 
           <div class="testimonial-item">
             <a href="https://drive.google.com/drive/folders/147Xi39NtXRHm1GO_qW742bWaNyGASVq_"><img
-                src="assets/img/testimonials/activity05.JPG" class="testimonial-img" alt=""></a>
+                src="assets/img/testimonials/Pi7compressedactivity05.png" class="testimonial-img" alt=""></a>
             <h3>第三次臺灣BookRoll合作研討會</h3>
             <p>
               時間：2020/07/08 <br>
@@ -365,7 +373,7 @@
 
           <div class="testimonial-item">
             <a href="https://drive.google.com/drive/folders/1MpfghgC6kf1-Ak6UXLMF4dSNOwSHhDvR"><img
-                src="assets/img/testimonials/activity04.JPG" class="testimonial-img" alt=""></a>
+                src="assets/img/testimonials/Pi7compressedactivity04.png" class="testimonial-img" alt=""></a>
             <h3>2nd BookRoll Meetups (聚會)</h3>
             <p>
               時間：2019/11/02 <br>
@@ -375,7 +383,7 @@
 
           <div class="testimonial-item">
             <a href="https://drive.google.com/drive/folders/1oVkRc72x5GyzN1LBhlxdTEq0k8bgrpdU"><img
-                src="assets/img/testimonials/activity03.JPG" class="testimonial-img" alt=""></a>
+                src="assets/img/testimonials/Pi7compressedactivity03.png" class="testimonial-img" alt=""></a>
             <h3>1st BookRoll Meetups (聚會)</h3>
             <p>
               時間：2019/10/18 <br>
@@ -390,7 +398,7 @@
           </div>
 
           <div class="testimonial-item">
-            <a href="https://lihi1.com/RnkoE"><img src="assets/img/testimonials/activity02.jpg" class="testimonial-img"
+            <a href="https://lihi1.com/RnkoE"><img src="assets/img/testimonials/Pi7compressedactivity02.png" class="testimonial-img"
                 alt=""></a>
             <h3>第二次臺灣BookRoll合作研討會</h3>
             <p>
@@ -401,7 +409,7 @@
 
           <div class="testimonial-item">
             <a href="https://drive.google.com/drive/folders/1uOWBbNtfp4Tfgd0SfzBzFXmSFI6aRaH_"><img
-                src="assets/img/testimonials/activity01.JPG" class="testimonial-img" alt=""></a>
+                src="assets/img/testimonials/Pi7compressedactivity01.png" class="testimonial-img" alt=""></a>
             <h3>第一次臺灣BookRoll合作研討會</h3>
             <p>
               時間：2019/07/12 <br>
@@ -418,8 +426,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>F.A.Q</h2>
-          <h3>Frequently Asked <span>Questions</span></h3>
+          <h3><span>常見問答</span></h3>
         </div>
 
         <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
@@ -427,7 +434,7 @@
           <li>
             <a data-toggle="collapse" href="#faq1" class="collapsed">BRPT 的 Book overview 提供了什麼功能 ?
               <i class="icofont-simple-up"></i></a>
-            <div id="faq1" class="collapse" data-parent=".faq-list">
+            <div id="faq1" class="collapse">
               <p>
                 教師可以在 Book overview 上查看: 學生最近的登入時間，學生進行的動作(包括劃記、回上一頁等)，教材每頁的劃記數(Marker)及內容，筆記(Memo)內容等。
               </p>
@@ -438,7 +445,7 @@
           <li>
             <a data-toggle="collapse" href="#faq2" class="collapsed">學生用 BookRoll 可以做什麼 ?
               <i class="icofont-simple-up"></i></a>
-            <div id="faq2" class="collapse" data-parent=".faq-list">
+            <div id="faq2" class="collapse">
               <p>
                 學生可以在教材上重點畫記、備註、標記書籤等，詳細請看使用手冊。
               </p>
@@ -449,7 +456,7 @@
           <li>
             <a data-toggle="collapse" href="#faq3" class="collapsed">如何開課 ?
               <i class="icofont-simple-up"></i></a>
-            <div id="faq3" class="collapse" data-parent=".faq-list">
+            <div id="faq3" class="collapse">
               <p>
                 請聯繫我們，我們將會為您開課，並新增課程教材。
               </p>
@@ -468,8 +475,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Contact</h2>
-          <h3><span>Contact Us</span></h3>
+          <h3><span>聯絡我們</span></h3>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -532,6 +538,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#about">公告區</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">文件下載</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#testimonials">活動回顧</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#faq">常見問答</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">聯絡我們</a></li>
             </ul>
           </div>

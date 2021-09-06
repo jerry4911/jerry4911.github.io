@@ -541,19 +541,6 @@ section {
   padding-bottom: 30px;
 }
 
-.section-title h2 {
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  padding: 8px 20px;
-  margin: 0;
-  background: #e7f1fd;
-  color: #106eea;
-  display: inline-block;
-  text-transform: uppercase;
-  border-radius: 50px;
-}
-
 .section-title h3 {
   margin: 15px 0 0 0;
   font-size: 32px;
@@ -769,6 +756,8 @@ section {
 
 .about .tab-content .tab-pane p b,.hyperlink {
   color:#0084ff;
+  word-wrap:break-word;
+  display: inline;
 }
 
 .about .tag {
@@ -787,6 +776,7 @@ section {
 
 .about .time {
   text-align: right;
+  padding-left: 16px;
 }
 
 .about .post-title {

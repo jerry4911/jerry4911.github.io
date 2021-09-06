@@ -4,6 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 !(function($) {
   "use strict";
 
@@ -14,6 +15,8 @@
         $(this).remove();
       });
     }
+    // 初始設定是否要清除快取
+    localStorage.setItem("initial",true);
   });
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
@@ -198,6 +201,18 @@
     $(document).ready(function() {
       $('.venobox').venobox();
     });
+    
+    $(document).ready(function() { 
+      // 公告區側欄
+      $(".nav-link").click(function () {
+        $(".post").removeClass("active show")
+        var id = this.id
+        id = id.replace("-tab", "");
+        $("#"+id).addClass("active show")
+      });
+    });
+
+
   });
 
   // Portfolio details carousel
@@ -218,23 +233,5 @@
   $(window).on('load', function() {
     aos_init();
   });
-
-  // 公告欄大小設為最長的公告高度
-  var post_list = $(".post");
-  var max_len = 0
-  for(var i=0; i<post_list.length; i++){
-    if( max_len < post_list[i].height() ){
-      max_len = post_list[i].height()
-    }
-  }
-  $("#v-pills-tabContent").height(max_len);
-
+  
 })(jQuery);
-
-// 公告區側欄
-function showPost(element){
-  $(".post").removeClass("active show")
-  var id = $(element).attr("id")
-  id = id.replace("-tab", "");
-  $("#"+id).addClass("active show")
-}
