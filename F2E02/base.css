@@ -104,9 +104,9 @@ body {
 }
 .card-place {
   height: 550px;
-  width:90%;
+  width:100%;
   padding-top: 30px;
-  padding-left: 120px;
+  /* padding-left: 120px; */
 }
 .logo-icon {
   display:inline-block;
@@ -130,7 +130,7 @@ body {
   /* height:300px;*/
   width:100px; 
   /* display:inline-block; */
-  padding-top: 0%;
+  padding-top: 15%;
   padding-left: 90%;
   padding-right: 0;
 }
