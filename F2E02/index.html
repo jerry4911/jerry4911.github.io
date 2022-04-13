@@ -10,21 +10,25 @@
     <title>F2E-Week02</title>
 </head>
 <body>
-<div id="app">
-    <div class="main-containter">
-        <div class="temp-place">
-            <div class="temp-card"id="temp1"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="temp-card"id="temp2"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="temp-card"id="temp3"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="temp-card"id="temp4"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="timer">
+<div id="app" class="main-containter">
+    <div class="col-12 col-md-12">
+        <div class="temp-place col-12">
+            <div class="temp-place-left">
+                <div class="temp-card"id="temp1"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div>
+                <div class="temp-card"id="temp2"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div>
+                <div class="temp-card"id="temp3"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div>
+                <div class="temp-card"id="temp4"ondrop="DropTemp(event)" ondragover="AllowDrop(event)"></div>
+            </div>
+            <div class="timer">
                 <div class="timer-title"onmousedown='return false;' onselectstart='return false;'>TIME</div>
                 <div class="count"onmousedown='return false;' onselectstart='return false;'>{{timer}}</div>
-            </div><!--
-        --><div class="end-group"id="end1"ondrop="DropEnd(event,1)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="end-group"id="end2"ondrop="DropEnd(event,2)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="end-group"id="end3"ondrop="DropEnd(event,3)" ondragover="AllowDrop(event)"></div><!--
-        --><div class="end-group"id="end4"ondrop="DropEnd(event,4)" ondragover="AllowDrop(event)"></div>
+            </div>
+            <div class="temp-place-right col-4">
+                <div class="end-group"id="end1"ondrop="DropEnd(event,1)" ondragover="AllowDrop(event)"></div>
+                <div class="end-group"id="end2"ondrop="DropEnd(event,2)" ondragover="AllowDrop(event)"></div>
+                <div class="end-group"id="end3"ondrop="DropEnd(event,3)" ondragover="AllowDrop(event)"></div>
+                <div class="end-group"id="end4"ondrop="DropEnd(event,4)" ondragover="AllowDrop(event)"></div>
+            </div>
         </div>
         <div class="card-place">
             <div class="card"id="card1">
@@ -145,7 +149,7 @@
     </div>
 </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <script src="./app.js"></script>
