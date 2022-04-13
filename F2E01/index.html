@@ -12,7 +12,8 @@
 </head>
 <body>
     <div id="app">
-        <div @click="show(0)"class="left-side">
+      <div class="col-12">
+        <div @click="show(0)"class="left-side col-10">
           <div class="context">
             <div class="logo-text">Pomodoro</div>
               <span title="現在的日期時間" class="time-text">{{timeText}}</span>
@@ -85,7 +86,7 @@
        </div>
         
       <!--右邊區塊-->
-      <div class="task-block">
+      <div class="task-block col-2">
         <input class="add" type="text" placeholder="Add a new task…">
         <div class="today-task">
           <div class="task-title">Today</div>
@@ -261,12 +262,13 @@
         <li id="music"@click="show(3)"class="nav-icon">
           <ion-icon name="musical-notes"></ion-icon>
         </li>
-      </ul>       
+      </ul>  
+    </div>     
     </div>
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <script src="./app.js"></script>

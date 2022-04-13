@@ -14,23 +14,32 @@ $center-size:120px;
   border-style: border-box;
 }
 html {
-  max-width:1920px;
-  max-height:1080px;
+  // max-width:1920px;
+  // max-height:1080px;
+  width:100%;
+  height:100%;
+  margin: 0;
+  padding: 0;
 }
 body {
   position: relative;
-  max-height:1080px;
-  max-width:1920px;
-  min-width: 1496px;
+  // max-height:1080px;
+  // max-width:1920px;
+  // min-width: 1496px;
+  width:100%;
+  height:100%;
+  margin: 0;
+  padding: 0;
   background-color:$dark-blue;
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
 .left-side {
-  min-height:930px;
-  min-width:1396px;
-  margin-right: 100px;
+  // min-height:930px;
+  // min-width:1396px;
+  width: 80%;
+  // margin-right: 100px;
   background-color:$light-mi;
 }
 .right-side {
@@ -40,6 +49,7 @@ body {
 }
 .context { 
   padding: 48px 74px;
+  width: 100%;
   //flex-direction: column;
   //justify-content: space-between;
 }
@@ -225,6 +235,11 @@ ion-icon {
 }
 .five{
   transform: rotateZ(150deg);
+}
+
+.clock-circle {
+  width: 0px;
+  display: block;
 }
 .clock-center {
   position: absolute;
