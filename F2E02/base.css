@@ -113,7 +113,7 @@ body {
   background-size: 124px 163px;
 }
 .card-place {
-  height: 550px;
+  height: 450px;
   width:100%;
   padding-top: 30px;
   /* padding-left: 120px; */
@@ -125,29 +125,41 @@ body {
   margin: 0;
 }
 .btn {
+  display: inline-block; /* inline會變成盤子 */
   cursor: pointer;
   box-shadow: 3px 3px #FFBC00;
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  padding: 0px;
+  margin: 0px;
   height: 70px;
   width: 70px;
-  margin-right: 0px;
+  margin-right: 20px;
   background-color: #FAFAD7;
   border-radius: 50%;
 }
 .btn-list{
+  /* width: 90%; */
+  margin: 0px;
+  padding: 0px;
   /* margin-right: 0px;
   margin-bottom: 0px; */
   /* height:300px;*/
-  width:100px; 
+  /* width:100px;  */
   /* display:inline-block; */
-  padding-top: 15%;
-  padding-left: 90%;
-  padding-right: 0;
+  padding-bottom: 0%;
+  margin-left: 65%;
+  /* padding-left: 70%; */
+  padding-right: 0%;
 }
 .btn img {
   padding-top: 9px;
   padding-left: 10px;
   height:70%;
+}
+
+.footer {
+  display: inline-flex;
+  width: 100%;
 }
 .real-card{
   height:163px; 
@@ -417,7 +429,7 @@ body {
 
 .alert-card, .congr-card, .restart-card{
   position: relative;
-  top:200px;
+  top:15%;
   margin: auto;
   height: 300px;
   width:600px;
